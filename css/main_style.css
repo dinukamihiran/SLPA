@@ -1,0 +1,54 @@
+/*
+Credit: http://www.templatemo.com
+*/
+
+body{ 
+	margin: 0;
+	padding: 0;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #c7c8c1;
+	background-image:  url(../images/background.jpg);
+	background-repeat: repeat
+}
+
+
+#slpa_header_wrapper {
+	width: 100%;
+	background: url(../images/header.png) center bottom no-repeat 
+}
+
+#slpa_header {
+	width: 820px;
+	min-height: 100px;
+	padding: 0px 0px 10px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 30px
+}
+
+#slpa_main_wrapper {
+	width: 100%;
+	background:url(../images/images.jpg) center top repeat
+}
+/*width :820;*/
+#slpa_main {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0 10px;
+	overflow: hidden;
+}
+
+#slpa_footer_wrapper  {
+	width: 100%;
+	background: url(../images/footer.png) center top no-repeat
+}
+
+#slpa_footer {
+	width: 780px;
+	margin: 0 auto;
+	padding: 20px 20px;
+	text-align: center
+}
+

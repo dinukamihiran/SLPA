@@ -1,0 +1,79 @@
+@charset "utf-8";
+#panel {
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: left;
+	margin-top: -250px;
+	height: 230px;
+	width: 400px;
+	color: #000;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: 50%;
+	border-top-width: medium;
+	border-right-width: medium;
+	border-bottom-width: medium;
+	border-left-width: medium;
+	box-shadow: 2px 2px 19px #aaa;
+	-o-box-shadow: 2px 2px 19px #aaa;
+	-webkit-box-shadow: 2px 2px 19px #aaa;
+	-moz-box-shadow: 2px 2px 19px #aaa;
+	border-radius: 10px 10px 10px 10px;
+	display: none;
+	opacity: 0.8;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.txt {
+	text-align: left;
+	border-radius: 10px 10px 10px 10px;
+	height: 30px;
+	border-top-color: #09F;
+	border-right-color: #09F;
+	border-bottom-color: #09F;
+	border-left-color: #09F;
+	padding: 5px;
+}
+.btn {
+	border-radius: 10px 10px 10px 10px;
+	background-color: #000;
+	height: 30px;
+	width: 70px;
+	color: #FFF;
+}
+div.transbox
+  {
+	height: 300px;
+	width: 400px;
+	background-color: #ffffff;
+	border: 1px solid black;
+	opacity: 0.6;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+	margin-top: 100px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: 35%;
+  }
+#p_login {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	width: 500px;
+	height: 200px;
+}
+
+.p_login_head {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-style: normal;
+	color: #09F;
+	word-spacing: normal;
+}
+
+.p_login_bottom_copywrite {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 6px;
+	font-style: normal;
+	
+}
