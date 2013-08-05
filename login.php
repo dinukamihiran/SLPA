@@ -1,18 +1,19 @@
 <?php
 include "php/server.php";
-/*
-$dbhost = "slpa.knnect.com";
+
+$dbhost = "127.0.0.1";//use local host as host name
 $dbuser = "syscall";
 $dbpass = "syscall123";
 $dbname = "syscall";
-*/
+
 	//Connect to MySQL Server
-//mysql_connect($dbhost, $dbuser, $dbpass);
+	//mysql_connect($dbhost, $dbuser, $dbpass);
 	//Select Database
-//mysql_select_db($dbname) or die(mysql_error());
+	//mysql_select_db($dbname) or die(mysql_error());
 	// Retrieve data from Query String
+
 	$db_handle = mysql_connect($dbhost, $dbuser, $dbpass);
-    $db_found = mysql_select_db($dbname, $db_handle);
+    	$db_found = mysql_select_db($dbname, $db_handle);
 
 if ($db_found) {
 $uname = $_GET['uname'];
