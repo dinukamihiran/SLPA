@@ -65,7 +65,7 @@ while($row = mysql_fetch_array($qry_result)){
 	
 	
 	/*
-	$dbhost = "slpa.knnect.com";
+	$dbhost = "localhost";
 $dbuser = "syscall";
 $dbpass = "syscall123";
 $dbname = "syscall";
