@@ -129,6 +129,7 @@ body,td,th {
 	border-left-color: #09F;
 	padding: 5px;
 }
+ 
 .btnSearch {
 	border-radius: 10px 10px 10px 10px;
 	background-color: #000;
@@ -169,4 +170,4 @@ body,td,th {
 	position: absolute;
 	border-radius: 10px 10px 10px 10px;
 	background-color: #333;	
-}
+} 

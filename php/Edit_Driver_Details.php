@@ -164,74 +164,41 @@ echo "</script>";
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="../js/jquery-1.10.1.min.js"></script>
- <script src="../js/jquery-1.3.2.min.js"></script>
- <script src="../js/jquery-ui-1.7.2.custom.min.js"></script>
+
  
-<script language="javascript" type="text/javascript">
-<!-- 
-//Browser Support Code
-function ajaxFunction(){
-	var ajaxRequest;  // The variable that makes Ajax possible!
-	
-	try{
-		// Opera 8.0+, Firefox, Safari
-		ajaxRequest = new XMLHttpRequest();
-	} catch (e){
-		// Internet Explorer Browsers
-		try{
-			ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-		} catch (e) {
-			try{
-				ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-			} catch (e){
-				// Something went wrong
-				alert("Your browser broke!");
-				return false;
-			}
-		}
-	}
-	// Create a function that will receive data sent from the server
-	ajaxRequest.onreadystatechange = function(){
-		if(ajaxRequest.readyState == 4){
-			var ajaxDisplay = document.getElementById('ajaxDiv1');
-			ajaxDisplay.innerHTML = ajaxRequest.responseText;
-			//document.myForm.time.value = ajaxRequest.responseText;
-			if(ajaxRequest.responseText=="<table border='0'><tr><td>no suggestions</td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td><td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table>"){
-				$("#ajaxDiv1").hide();
-				}
-			
-			
-		}
-	}
-	var tx = document.getElementById('tx').value;
-	//var sex = document.getElementById('sex').value;
-	//var queryString =  tx ;
-	ajaxRequest.open("GET", "hint.php?q=" + tx, true);
-	ajaxRequest.send(null); 
-}
 
-//-->
+<script type="text/javascript" src="../src/jquery.min.js"></script>
+    <script type="text/javascript" src="../src/jquery.tokeninput.js"></script>
+    
+     
+     <script type="text/javascript">
+	    $(document).ready(function() {
+            $("#demo-input").tokenInput("din.php", { 
+			    preventDuplicates: true,
+                tokenLimit: 1,
+			    prePopulate: [
+                    {  name: "<?php echo ($destination); ?>"}
+                    
+                ]
+            });
+        });
+        </script>
+       
+       <link rel="stylesheet" href="../css_dt/jquery-ui-1.10.3.custom.css" />
+ <link rel="stylesheet" href="../css_dt/jquery-ui-1.10.3.custom.min.css" />
+ <script src="../js_dt/jquery-ui.js"></script>
+  
 
-$(document).ready(function() {
-   $("#tx").click(function(){
-		if(document.getElementById('tx').value!=" ")
-		{$("#ajaxDiv1").show();}
-		else{
-		$("#ajaxDiv1").hide();}
-		 /*if ($("#tx").is(":focus")) {
-            alert('focusd');
-              $("#ajaxDiv1").show();
-}
-		if($("#tx").is(":blur")){
-			$("#ajaxDiv1").hide();}*/
-   });
-    $("#tx").blur(function(){
-		$("#ajaxDiv1").hide();
-	});
-	});
+ <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+</script> 
 
-</script>
+    <link rel="stylesheet" href="../styles/token-input.css" type="text/css" />
+    
+  
+ 
 
 <SCRIPT language=Javascript>
       
@@ -245,11 +212,7 @@ $(document).ready(function() {
           return true;
        }
        
-    </SCRIPT>
-    <style type="text/css">
-	
-
-    </style>
+    </SCRIPT> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Job Information System</title>
 <meta name="keywords" content="singular theme, free template, web design, clean, simple, professional, CSS, HTML" />
@@ -260,7 +223,7 @@ $(document).ready(function() {
 
 <link href="../css/main_page_style.css" type="text/css" rel="stylesheet" />
 
-<script type="text/javascript" src="../js/jquery.min.js"></script>
+
 
 </head> 
 <body> 
@@ -372,7 +335,7 @@ while($row = mysql_fetch_array($qry_result)){
             <td colspan="3">
             <input name="department" type="text" id="department" size="34" class="txtbox" value= '<?php echo $department; ?>'/></td>
             <td>Date</td>
-              <td><input name="date" type="text" id="date" size="34" class="txtbox" value= '<?php  echo $date; ?>' /></td>
+              <td><input name="date" type="text" id="datepicker" size="34" class="txtbox" value= '<?php  echo $date; ?>' /></td>
           </tr>
            <tr><td> </td></tr>
           <tr>
@@ -384,7 +347,7 @@ while($row = mysql_fetch_array($qry_result)){
             <td colspan="3"><input name="owner_of_vehicle" type="text" id="owner_of_vehicle" size="34" class="txtbox" value= '<?php echo $vehicle_owner; ?>'/></td>
               
              <td>Destination</td>
-             <td><input type="text" id="tx" name="Destination"   onkeypress="ajaxFunction()"  size="34" class="txtbox" value= '<?php echo $destination; ?>' />
+             <td><input type="text" id="demo-input" name="Destination"   />
              <div id='ajaxDiv1'></div></td>
           </tr>
           <tr >

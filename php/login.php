@@ -11,8 +11,8 @@ $dbname = "syscall";
 	//Select Database
 //mysql_select_db($dbname) or die(mysql_error());
 	// Retrieve data from Query String
-	$db_handle = mysql_connect($dbhost, $dbuser, $dbpass);
-    $db_found = mysql_select_db($dbname, $db_handle);
+	$db_handle = mysql_connect("127.0.0.1","root", "kasun123");
+    $db_found = mysql_select_db("syscall", $db_handle);
 
 if ($db_found) {
 $uname = $_GET['uname'];
