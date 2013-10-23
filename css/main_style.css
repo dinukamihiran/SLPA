@@ -5,16 +5,29 @@ Credit: http://www.templatemo.com
 body{ 
 	margin: 0;
 	padding: 0;
+<<<<<<< HEAD
 	color: #000000;
 	font-size: 12px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	background-color: #F0F1F0;
 	 background-repeat: repeat
+=======
+	color: #FFFFFF;
+	font-size: 12px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #c7c8c1;
+	background-image:  url(../images/background.jpg);
+	background-repeat: repeat
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 }
 
 
 #slpa_header_wrapper {
 	width: 100%;
+<<<<<<< HEAD
+=======
+	background: url(../images/header.png) center bottom no-repeat 
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 }
 
 #slpa_header {
@@ -23,15 +36,23 @@ body{
 	padding: 0px 0px 10px;
 	margin: 0 auto;
 	text-align: center;
+<<<<<<< HEAD
 	 
 	
+=======
+	margin-bottom: 30px
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 }
 
 #slpa_main_wrapper {
 	width: 100%;
+<<<<<<< HEAD
 	background-color: #F0F1FF
 	
 	 
+=======
+	background:url(../images/images.jpg) center top repeat
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 }
 /*width :820;*/
 #slpa_main {
@@ -39,16 +60,23 @@ body{
 	margin: 0 auto;
 	padding: 0 10px;
 	overflow: hidden;
+<<<<<<< HEAD
 	background-color: #F0F1FF;
 	border-bottom-style:groove;
 	border-top-style:groove;
 	 border-color:#CCC; 
 	
+=======
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 }
 
 #slpa_footer_wrapper  {
 	width: 100%;
+<<<<<<< HEAD
 	 
+=======
+	background: url(../images/footer.png) center top no-repeat
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 }
 
 #slpa_footer {

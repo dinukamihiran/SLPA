@@ -4,7 +4,11 @@
 <!------------------------ Html Document definitions and page setups ------------------------>
 <head>
 
+<<<<<<< HEAD
 <link rel="stylesheet" href="../css/css_map/jquery-ui.css" />
+=======
+<link rel="stylesheet" href="../js1/jquery-ui.css" />
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 <title>Welcome to SLPA Vehicle Tracking System</title>
 <meta name="keywords"
      content="srilanka port authority, SLPA,UOM,FIT,vehicle tracking system" />
@@ -20,21 +24,35 @@
 
 <!-- CSS style sheet for Leaflet API from online CDN -->
 
+<<<<<<< HEAD
 <link rel="stylesheet" href="../css/css_map/leaflet.css" />
+=======
+<link rel="stylesheet" href="../js1/leaflet.css" />
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 
 <!------------------------------------------------ End ------------------------------------------------>
 
 <!-------------------------- JavaScript file for Leaflet API from online CDN -------------------------->
 
+<<<<<<< HEAD
 <script src="../js/js_map/leaflet.js"></script>
+=======
+<script src="../js1/leaflet.js"></script>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 
 <!------------------------------------------------ End ------------------------------------------------>
 
 <!-------------------------- Javascript JQuery 1.8.3 API for animations and AJAX -------------------------->
 
+<<<<<<< HEAD
 <script src="../js/js_map/jquery-1.8.3.js"></script>
 
 <script src="../js/js_map/jquery-ui-1.9.2.js"></script>
+=======
+<script src="../js1/jquery-1.8.3.js"></script>
+
+<script src="../js1/jquery-ui-1.9.2.js"></script>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 
 <!------------------------------------------------ End ------------------------------------------------>
 <script type="text/javascript">
@@ -90,7 +108,11 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("lati").innerHTML=xmlhttp.responseText;
     }
   }
+<<<<<<< HEAD
 xmlhttp.open("GET","get_from_ajax.php?q="+str,true);
+=======
+xmlhttp.open("GET","set.php?q="+str,true);
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 xmlhttp.send();
 }
 function showUser1(str1)
@@ -116,7 +138,11 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("lon").innerHTML=xmlhttp.responseText;
     }
   }
+<<<<<<< HEAD
 xmlhttp.open("GET","get_from_ajax.php?p="+str1,true);
+=======
+xmlhttp.open("GET","set.php?p="+str1,true);
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 xmlhttp.send();
 }
 
@@ -129,7 +155,12 @@ xmlhttp.send();
 <div id="destinationMap" style="width: 750px;height: 400px">
 
 </div>
+<<<<<<< HEAD
 <div> 
+=======
+<div>
+<font color="#FFFFFF">
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 <table width="605" border="0" cols="4" rows="1">
 <tr><td width="88" height="32">Latitude :</td><td width="142"><div id="lati"></div></td>
 <td width="84">Longitude :</td><td width="167"><div id="lon"></div></td></tr>
@@ -147,7 +178,11 @@ xmlhttp.send();
   </td>
 </tr>
 
+<<<<<<< HEAD
 </table> 
+=======
+</table></font>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 </div>
 
 <script>

@@ -6,7 +6,10 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
  include "server.php";
  ?>
  <?php 
+<<<<<<< HEAD
     $user= $_GET['user'];
+=======
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
     $user_level="";
 	
    /* $user_name = "root";
@@ -14,13 +17,20 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 	$database = "job_information";
 	$server = "localhost";
 	*/
+<<<<<<< HEAD
 //echo $user;
+=======
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 	
 	$db_handle = mysql_connect($dbhost, $dbuser, $dbpass);
 $db_found = mysql_select_db($dbname, $db_handle);
 
 	    if ($db_found) {
+<<<<<<< HEAD
 			$SQL="select * from logins where computer_number='$user'";
+=======
+			$SQL="select * from logins where computer_number=".$_SESSION['user'];
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 			$result = mysql_query($SQL);
   			$db_field = mysql_fetch_assoc($result);
 			
@@ -28,7 +38,11 @@ $db_found = mysql_select_db($dbname, $db_handle);
 			$occupation=$db_field['occupation'];
 			$division=$db_field['Division'];
 			
+<<<<<<< HEAD
 			$sql="select * from administrator where computer_number='$user'";
+=======
+			$sql="select * from administrator where computer_number=".$_SESSION['user'];
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 			$result1 = mysql_query($sql);
 			$num_rows = mysql_num_rows($result1);
 			if($result1)
@@ -49,13 +63,21 @@ $db_found = mysql_select_db($dbname, $db_handle);
 		}
 		else
 		{}
+<<<<<<< HEAD
   mysql_close($db_handle);
+=======
+ 
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
  ?>
  <?php 
 	if (isset($_POST["update"])) {
 		 $errorMessage="";
 		// $pwd=hash('sha256', $_POST['password']);
+<<<<<<< HEAD
 		   if( $_POST["user_full_name"]=="" || $_POST["occupation"]=="" || $_POST["division"]=="")
+=======
+		   if($_POST["user_id"]=="" || $_POST["user_full_name"]=="" || $_POST["occupation"]==""|| $_POST["division"]=="")
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 		  {
 			  $errorMessage = "Some fields are missing.Please enter data ";
 		  }
@@ -72,6 +94,7 @@ $db_found = mysql_select_db($dbname, $db_handle);
 
 	    if ($db_found) {
 
+<<<<<<< HEAD
 //echo $_POST[user_id];
 //echo  $_POST[user_full_name];
 //echo $_POST[occupation];
@@ -83,12 +106,29 @@ $db_found = mysql_select_db($dbname, $db_handle);
 	  $result_update=mysql_query($sql);
 	  
 	   
+=======
+
+      $sql="UPDATE logins SET computer_number='$_POST[user_id]',Full_Name='$_POST[user_full_name]', occupation='$_POST[occupation]' , Division='$_POST[division]'  WHERE computer_number='$_SESSION[user]'";
+	
+	  $result=mysql_query($sql);
+	  
+	  if($_SESSION['status']=="Admin")
+	  {
+		  $SQL="UPDATE administrator SET computer_number='$_POST[user_id]' WHERE computer_number='$_SESSION[user]'";
+	
+	  $result1=mysql_query($SQL);
+	  }
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 	  
  echo "<script>";
  
         echo 'window.alert("This post was successfully updated.");';
 
+<<<<<<< HEAD
       echo' document.location.href = "Show_Users.php?pageID=0";';
+=======
+       echo' document.location.href = "Show_Users.php?pageID=0";';
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 
 echo "</script>";
 	      mysql_close($db_handle);
@@ -113,16 +153,28 @@ echo "</script>";
 	$server = "localhost";
 */
 	$db_handle = mysql_connect($dbhost, $dbuser, $dbpass);
+<<<<<<< HEAD
     $db_found = mysql_select_db($dbname, $db_handle);
 
 	    if ($db_found) {
 			
       $sql1="DELETE FROM logins WHERE computer_number='$_POST[user_id]'";
+=======
+$db_found = mysql_select_db($dbname, $db_handle);
+
+	    if ($db_found) {
+			
+      $sql1="DELETE FROM logins WHERE computer_number='$_SESSION[user]'";
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 	  $result1=mysql_query($sql1);
 	  
 	  if($user_level=="Admin")
 	  {
+<<<<<<< HEAD
 		  $sql2="DELETE FROM administrator WHERE computer_number='$_POST[user_id]'";
+=======
+		  $sql2="DELETE FROM administrator WHERE computer_number='$_SESSION[user]'";
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 	      $result2=mysql_query($sql2);
 	  
 	  }
@@ -211,6 +263,7 @@ while($row = mysql_fetch_array($qry_result)){
 }
 		echo '<div id="log">You are login as '.$name.'</div>';
   
+<<<<<<< HEAD
    include "menu.php";
 	?>
    
@@ -225,6 +278,56 @@ while($row = mysql_fetch_array($qry_result)){
           <tr>
             <td width="130">Computer Number</td>
             <td colspan="3"><input name="user_id" type="text" id="user_id" size="34" onkeypress="return isNumberKey(event)" class="txtbox" value='<?php echo $user; ?>'/> </td>
+=======
+	?>
+  <ul id="tab_menu">
+	  <li><a href="main.php?pageID=0">Home</a></li>
+	<li>
+		<a href="">Driver Management</a>
+		<ul>
+        <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li ><a href="Add_New_Driver.php">Add New Driver</a></li>';
+        }?>   
+        
+			<li><a href="main.php?pageID=0" onClick="DislplayAlert()">Edit Driver Details</a></li>
+            
+            <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="main.php?pageID=0">Remove Driver</a></li>';
+        }?>
+			
+		</ul>
+	</li>
+	<li><a href="">User Management</a>
+       <ul>
+       
+        <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="Add_New_User.php">Add New User</a></li>';
+        }?>
+			
+			<li><a href="Edit_User_Profile.php?">Edit User Profile</a></li>
+            
+            <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="Show_Users.php?pageID=0">Remove User</a></li>';
+        }?>
+			
+		</ul>
+     </li>
+    <li><a href="Add_Cordinates.php">Add Coordinates</a></li>
+	<li><a href="About.php">About</a></li>
+	<li><a href="logout.php">Logout</a></li>
+</ul>
+
+    <div id="display_drivers">
+             <form id="Edit_or_remove_users" name="Edit_or_remove_users" method="post" action="Edit_or_remove_users.php">
+        <font color="#FFFFFF"><table width="799" border="0" cellspacing="5">
+          <tr>
+            <td colspan="6"><label for="heading">
+            <font size="+2" color="#FFFFFF" ><center>Remove User</center></font></label></td>
+          </tr>
+          <tr>
+            <td width="130">Computer Number</td>
+            <td colspan="3"><input name="user_id" type="text" id="user_id" size="34" onkeypress="return isNumberKey(event)" class="txtbox" value='<?php echo $_SESSION['user']; ?>'/> </td>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
             <td width="129">Extendable</td>
             <td width="223">Extendable</td>
             
@@ -293,12 +396,20 @@ while($row = mysql_fetch_array($qry_result)){
           <tr>
             <td>&nbsp;</td>
             <td width="26">&nbsp;</td>
+<<<<<<< HEAD
             <td width="112"><input type="button" name="cancel" id="cancel" value="Cancel" onClick="javascript:window.location.href='Show_Users.php?pageID=0'" class="btnAddLocation" /></td>
+=======
+            <td width="112"><input type="button" name="cancel" id="cancel" value="Cancel" onClick="javascript:window.location.href='main.php?pageID=0'" class="btnAddLocation" /></td>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
            <td width="118"><input type="submit" name="update" id="update" value="Update Profile" class="btnAddLocation"/></td>
              <td width="129"><input type="submit" name="remove" id="remove" value="Remove" class="btnAddLocation"/></td>
             
           </tr>
+<<<<<<< HEAD
         </table> 
+=======
+        </table></font>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
         &nbsp; <label><font color="red"><?php echo $errorMessage; ?></font></label>
       </form>
     </div>

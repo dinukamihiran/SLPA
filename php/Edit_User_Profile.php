@@ -22,7 +22,10 @@ $db_found = mysql_select_db($dbname, $db_handle);
 			$user_name=$db_field['Full_Name'];
 			$occupation=$db_field['occupation'];
 			$division=$db_field['Division'];
+<<<<<<< HEAD
 			$user_pwd=$db_field['password'];
+=======
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 			
 		}
 		else
@@ -34,6 +37,7 @@ $db_found = mysql_select_db($dbname, $db_handle);
 
 	if (isset($_POST["update"])) {
 		 $errorMessage="";
+<<<<<<< HEAD
 		 
 		  
 		  
@@ -43,6 +47,17 @@ $db_found = mysql_select_db($dbname, $db_handle);
 		  }
 		  
 		  
+=======
+		 $pwd=$pwd=md5($_POST['password']);
+		   if($_POST["user_id"]=="" || $_POST["user_full_name"]=="" || $_POST["occupation"]==""|| $_POST["division"]==""||  $_POST["password"]=="" ||  $_POST["confirm_password"]=="")
+		  {
+			  $errorMessage = "Some fields are missing.Please enter data ";
+		  }
+		   else if($_POST["password"] != $_POST["confirm_password"])
+		  {
+			  $errorMessage = "password confirmation doesn't match ";
+		  }
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 		  else{
  /*
 	$user_name = "root";
@@ -56,17 +71,28 @@ $db_found = mysql_select_db($dbname, $db_handle);
 	    if ($db_found) {
 
 
+<<<<<<< HEAD
       $sql="UPDATE logins SET  Full_Name='$_POST[user_full_name]', occupation='$_POST[occupation]' , Division='$_POST[division]'  WHERE computer_number='$_SESSION[login]'";
 	
 	  $result=mysql_query($sql);
 	  
 	  /*if($_SESSION['status']=="Admin")
+=======
+      $sql="UPDATE logins SET computer_number='$_POST[user_id]', password='$pwd' , Full_Name='$_POST[user_full_name]', occupation='$_POST[occupation]' , Division='$_POST[division]'  WHERE computer_number='$_SESSION[login]'";
+	
+	  $result=mysql_query($sql);
+	  
+	  if($_SESSION['status']=="Admin")
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 	  {
 		  $SQL="UPDATE administrator SET computer_number='$_POST[user_id]', password='$pwd' WHERE computer_number='$_SESSION[login]'";
 	
 	  $result1=mysql_query($SQL);
 	  }
+<<<<<<< HEAD
 	  */
+=======
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 	  
  echo "<script>";
  
@@ -85,6 +111,7 @@ echo "</script>";
 		}
 	 }
 	
+<<<<<<< HEAD
 if (isset($_POST["change"])) {
 		 $errorMessage="";
 		 
@@ -126,12 +153,35 @@ if (isset($_POST["change"])) {
 		 }
 		  
 }
+=======
+
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<<<<<<< HEAD
  
+=======
+<SCRIPT language=Javascript>
+      
+       function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+       }
+       
+    </SCRIPT>
+    <style type="text/css">
+	
+
+    </style>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Job Information System</title>
 <meta name="keywords" content="singular theme, free template, web design, clean, simple, professional, CSS, HTML" />
@@ -177,6 +227,7 @@ while($row = mysql_fetch_array($qry_result)){
 	
 }
 		echo '<div id="log">You are login as '.$name.'</div>';
+<<<<<<< HEAD
       
 	  include "menu.php";
 	?>
@@ -193,10 +244,65 @@ while($row = mysql_fetch_array($qry_result)){
             <td colspan="2"><input name="user_id" type="text" id="user_id" size="34"  class="txtbox" value='<?php echo $_SESSION[login]; ?>' readonly="readonly"  /> </td>
             <td  colspan="2" width="289">Extendable</td>
              
+=======
+  
+	?>
+  <ul id="tab_menu">
+	  <li><a href="main.php?pageID=0">Home</a></li>
+	<li>
+		<a href="">Driver Management</a>
+		<ul>
+        <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li ><a href="Add_New_Driver.php">Add New Driver</a></li>';
+        }?>   
+        
+			<li><a href="main.php?pageID=0" onClick="DislplayAlert()">Edit Driver Details</a></li>
+            
+            <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="main.php?pageID=0">Remove Driver</a></li>';
+        }?>
+			
+		</ul>
+	</li>
+	<li><a href="">User Management</a>
+       <ul>
+       
+        <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="Add_New_User.php">Add New User</a></li>';
+        }?>
+			
+			<li><a href="Edit_User_Profile.php?">Edit User Profile</a></li>
+            
+            <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="Show_Users.php?pageID=0">Remove User</a></li>';
+        }?>
+			
+		</ul>
+     </li>
+    <li><a href="Add_Cordinates.php">Add Coordinates</a></li>
+	<li><a href="About.php">About</a></li>
+	<li><a href="logout.php">Logout</a></li>
+</ul>
+
+    <div id="display_drivers">
+        <form id="Edit_User_Profile" name="Edit_User_Profile" method="post" action="Edit_User_Profile.php">
+        <font color="#FFFFFF"><table width="799" border="0" cellspacing="5">
+          <tr>
+            <td colspan="6"><label for="heading">
+            <font size="+2" color="#FFFFFF" ><center>Update Your Profile</center></font></label></td>
+          </tr>
+          <tr>
+            <td width="128">Computer Number</td>
+            <td colspan="3"><input name="user_id" type="text" id="user_id" size="34" onkeypress="return isNumberKey(event)" class="txtbox" value='<?php echo $_SESSION[login]; ?>' /> </td>
+            <td width="69">Extendable</td>
+            <td width="217">Extendable</td>
+            
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
             
           </tr>
           <tr>
             <td>Full Name</td>
+<<<<<<< HEAD
             <td colspan="2">
             <input name="user_full_name" type="text" id="user_full_name" size="34" class="txtbox" value='<?php echo $name; ?>'/></td>
             <td width="69">Extendable</td>
@@ -224,6 +330,35 @@ while($row = mysql_fetch_array($qry_result)){
              <td>
              <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
                echo '<input type="radio" name="status"id="admin" value="admin" checked disabled="disabled"/>Administrator</td>';
+=======
+            <td colspan="3">
+            <input name="user_full_name" type="text" id="user_full_name" size="34" class="txtbox" value='<?php echo $name; ?>'/></td>
+            <td width="69">Password</td>
+            <td width="217"><input name="password" type="text" id="password" size="34" class="txtbox" /></td>
+          </tr>
+          <tr>
+            <td>Occupation</td>
+            <td colspan="3">
+            <input name="occupation" type="text" id="occupation" size="34" class="txtbox" value='<?php echo $occupation; ?>' /></td>
+          <td>Confirm password</td>
+          <td>  <input name="confirm_password" type="text" id="confirm_password" size="34" class="txtbox" /></td>
+          </tr>
+          <tr>
+            <td>Division</td>
+            <td colspan="3">
+            <input name="division" type="text" id="division" size="34" class="txtbox" value='<?php echo $division; ?>' />
+            </td>
+            
+            <td colspan="2">Select Your Role</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="3">
+             </td><td></td>
+             <td>
+             <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+               echo '<input type="radio" name="status"id="admin" value="admin" checked />Administrator</td>';
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 			  }
 			  else
 			  {
@@ -233,13 +368,21 @@ while($row = mysql_fetch_array($qry_result)){
              </tr>
           <tr>
             <td></td>
+<<<<<<< HEAD
             <td colspan="2">
+=======
+            <td colspan="3">
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
            
               </td>
               <td></td>
              <td>
               <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+<<<<<<< HEAD
              echo '<input type="radio"  name="status" id="user" value="user" disabled="disabled" />User</td>';
+=======
+             echo '<input type="radio"  name="status" id="user" value="user"  />User</td>';
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 			  }
 			  else{
 				echo '<input type="radio"  name="status" id="user" value="user" checked disabled="disabled"/>User</td>';
@@ -259,6 +402,7 @@ while($row = mysql_fetch_array($qry_result)){
             <td width="61"><input type="button" name="cancel" id="cancel" value="Cancel" onClick="javascript:window.location.href='main.php?pageID=0'" class="btnAddLocation" /></td>
             <td width="127"><input type="submit" name="update" id="update" value="Update Profile" class="btnAddLocation"/></td>
           </tr>
+<<<<<<< HEAD
          
             <tr>
             <td colspan="3"><br />To change your current password</td>
@@ -284,6 +428,9 @@ while($row = mysql_fetch_array($qry_result)){
           </tr>
             
         </table> 
+=======
+        </table></font>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
         &nbsp; <label><font color="red"><?php echo $errorMessage; ?></font></label>
       </form>
     </div>

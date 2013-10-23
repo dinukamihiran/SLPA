@@ -7,7 +7,10 @@
 <meta name="keywords" content="singular theme, free template, web design, clean, simple, professional, CSS, HTML" />
 <meta name="description" content="Singular Theme, free CSS template from templatemo.com" />
 
+<<<<<<< HEAD
   
+=======
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
 <link href="css/main_style.css" type="text/css" rel="stylesheet" />
 
 <link href="css/login_page_style.css" type="text/css" rel="stylesheet" />
@@ -135,18 +138,30 @@ function onchangeContent(){
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Sign In</b></font></td>
     </tr>
   <tr>
+<<<<<<< HEAD
   <td width="112" height="56"><font face="Georgia, Times New Roman, Times, serif" size="+1"  >&nbsp;Username</font></td>
+=======
+  <td width="112" height="56"><font face="Georgia, Times New Roman, Times, serif" size="+1" color="#FFFFFF">&nbsp;Username</font></td>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
    <div class="target">
     <td width="259">&nbsp;<input id="uname" name="username" type="text" class="txt"  size="30" maxlength="30" placeholder="Username"/></td></div>
   </tr>
   <tr>
+<<<<<<< HEAD
     <td height="48"><font face="Georgia, Times New Roman, Times, serif" size="+1"  >&nbsp;Password</font></td>
+=======
+    <td height="48"><font face="Georgia, Times New Roman, Times, serif" size="+1" color="#FFFFFF">&nbsp;Password</font></td>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
     <td>&nbsp;<input id="pword" name="password" type="password" class="txt" size="30" maxlength="30" placeholder="Password" /></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>&nbsp;
+<<<<<<< HEAD
      <center><input id="btn" name="submit" type="button" class="btnLogin"  value="Sign In"   onclick='ajaxFunction()'/> </center> </td>
+=======
+     <center><input id="btn" name="submit" type="button" class="btn"  value="Sign In" onclick='ajaxFunction()'/> </center> </td>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
   </tr>
 </table></center>
 </form>

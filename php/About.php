@@ -57,12 +57,57 @@ while($row = mysql_fetch_array($qry_result)){
 	
 }
 		echo '<div id="log">You are login as '.$name.'</div>';
+<<<<<<< HEAD
 		 include "menu.php";
   
 	?>
   
         <div id="display_drivers">
         <p> <br/> &nbsp&nbsp&nbsp;This Software is  called Job Informaton Management system.The system is mainly developed for gather and store information of the vehicles, which are going outside of port.This sysem developed as a request of the vehicle tracking system.And this system provide the driver detaila,vehicle information and the job given time to the vehicle tracking system. <br /><br />
+=======
+  
+	?>
+  <ul id="tab_menu">
+	
+    
+    <li><a href="main.php?pageID=0">Home</a></li>
+	<li>
+		<a href="">Driver Management</a>
+		<ul>
+        <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li ><a href="Add_New_Driver.php">Add New Driver</a></li>';
+        }?>   
+        
+			<li><a href="main.php?pageID=0" onClick="DislplayAlert()">Edit Driver Details</a></li>
+            
+            <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="main.php?pageID=0">Remove Driver</a></li>';
+        }?>
+			
+		</ul>
+	</li>
+	<li><a href="">User Management</a>
+       <ul>
+       
+        <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="Add_New_User.php">Add New User</a></li>';
+        }?>
+			
+			<li><a href="Edit_User_Profile.php?">Edit User Profile</a></li>
+            
+            <?php if(isset($_SESSION['status']) AND $_SESSION['status']=="Admin") {
+        echo '<li><a href="Show_Users.php?pageID=0">Remove User</a></li>';
+        }?>
+			
+		</ul>
+     </li>
+    <li><a href="Add_Cordinates.php">Add Coordinates</a></li>
+	<li><a href="About.php">About</a></li>
+	<li><a href="logout.php">Logout</a></li>
+</ul>
+        <div id="display_drivers">
+       <font color="#FFFFFF"><p> <br/> &nbsp&nbsp&nbsp;This Software is  called Job Informaton Management system.The system is mainly developed for gather and store information of the vehicles, which are going outside of port.This sysem developed as a request of the vehicle tracking system.And this system provide the driver detaila,vehicle information and the job given time to the vehicle tracking system. <br /><br />
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
    
    Following functionalities are offered by this system<br />
   *  Add New Driver<br />
@@ -74,7 +119,11 @@ while($row = mysql_fetch_array($qry_result)){
          *  team sysCall-batch11(Faculty Of Information Technology)<br />
             <center> University Of Moratuwa</center>
 
+<<<<<<< HEAD
        </p> 
+=======
+       </p></font>
+>>>>>>> 196240c3772e4e56f44b2fcb59e1d0ff11f1660b
      </div>
 </div>
 </div>
